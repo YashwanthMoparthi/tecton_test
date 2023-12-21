@@ -20,7 +20,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install Tecton CLI
-        run: pip install tecton
+        run: |
+            python -m venv venv
+            source venv/bin/activate
+            pip install tecton
 
       - name: Authenticate with Tecton
         run: tecton auth login
