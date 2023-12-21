@@ -1,0 +1,3 @@
+tecton:
+  api_key: YOUR_API_KEY
+  cluster_url: https://your_tecton_cluster_url
