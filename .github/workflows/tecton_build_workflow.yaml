@@ -1,0 +1,31 @@
+name: Tecton Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Tecton CLI
+        run: pip install tecton
+
+      - name: Authenticate with Tecton
+        run: tecton auth login
+
+      - name: Deploy Tecton Resources
+        run: |
+          tecton apply -f datasets/snowflake_dataset.yaml
+          tecton apply -f transformations/transform_snowflake_data.yaml
+          tecton apply -f features/snowflake_features.yaml

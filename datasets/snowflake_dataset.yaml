@@ -1,0 +1,6 @@
+name: snowflake_dataset
+type: Snowflake
+database: FEATURESTORE_DB
+warehouse: FEATURESTORE_WH
+schema: FEATURESTORE_SCHEMA
+table: SALES_TABLE

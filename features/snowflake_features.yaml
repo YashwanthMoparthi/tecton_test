@@ -1,0 +1,6 @@
+features:
+  - name: snowflake_feature
+    inputs:
+      - name: transformed_snowflake_dataset
+    transformations:
+      - name: transform_snowflake_data

@@ -1,0 +1,10 @@
+name: transform_snowflake_data
+inputs:
+  - name: snowflake_dataset
+outputs:
+  - name: transformed_snowflake_dataset
+transform:
+  type: SQL
+  query: |
+    SELECT * FROM snowflake_dataset
+    WHERE sales_date >= '01-10-2021';
